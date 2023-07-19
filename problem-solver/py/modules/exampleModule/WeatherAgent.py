@@ -4,7 +4,7 @@ For this we wait for SIGINT.
 """
 
 import logging
-
+import os
 from sc_client.models import ScAddr, ScLinkContentType
 
 from sc_client.constants import sc_types
@@ -64,8 +64,9 @@ class WeatherAgent(ScAgentClassic):
 
         return ScResult.OK
 
+SC_SERVER_HOST = os.getenv('host', 'localhost')
 
-SC_SERVER_URL = "ws://localhost:8090/ws_json"
+SC_SERVER_URL = f'ws://{SC_SERVER_HOST}:8090/ws_json'
 server = ScServer(SC_SERVER_URL)
 with server.connect():
     module = ScModule(WeatherAgent("action_show_weather"))

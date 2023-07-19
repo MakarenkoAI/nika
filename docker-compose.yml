@@ -52,7 +52,7 @@ services:
       - "KB_PATH=../repo.path"
     command:
       - "serve"
-
+    
   nika-ui:
     image: ostis/nika-ui:0.1.0
     build:
@@ -70,6 +70,24 @@ services:
       - SC_WEB_URL=http://web:8000
     depends_on:
       - web
+
+  py-sc-server:
+    build:
+      context: ./problem-solver/py
+      dockerfile: ./Dockerfile
+    container_name: py-sc-server
+    restart: unless-stopped
+    depends_on:
+      problem-solver:
+        condition: service_healthy
+    environment:
+      - host=problem-solver
+    command:
+      - "--host=problem-solver"
+    networks:
+      - nika
+
+
 volumes:
   kb-binary: {}
 

@@ -1,7 +1,5 @@
 import argparse
-
 from sc_kpm import ScServer
-
 from modules.exampleModule.ExampleModule import ExampleModule
 
 import logging.config
