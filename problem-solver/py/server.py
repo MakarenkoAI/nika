@@ -1,6 +1,6 @@
 import argparse
 from sc_kpm import ScServer
-from modules.exampleModule.ExampleModule import ExampleModule
+from modules.messageProcessingModule.MessageProcessingModule import MessageProcessingModule
 
 import logging.config
 from pathlib import Path
@@ -50,7 +50,7 @@ def main(args: dict):
 
     with server.connect():
         modules = [
-            ExampleModule()
+            MessageProcessingModule()
         ]
         server.add_modules(*modules)
 
@@ -69,3 +69,4 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     main(vars(args))
+    

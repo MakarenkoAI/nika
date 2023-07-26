@@ -73,8 +73,8 @@ services:
 
   py-sc-server:
     build:
-      context: ./problem-solver/py
-      dockerfile: ./Dockerfile
+      context: ./
+      dockerfile: ./problem-solver/py/Dockerfile
     container_name: py-sc-server
     restart: unless-stopped
     depends_on:
@@ -86,7 +86,6 @@ services:
       - "--host=problem-solver"
     networks:
       - nika
-
 
 volumes:
   kb-binary: {}

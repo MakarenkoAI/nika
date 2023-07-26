@@ -41,24 +41,24 @@ class WeatherAgent(ScAgentClassic):
         return result
     
     def run(self, action_node: ScAddr) -> ScResult:
-        self.logger.info("Agent began to run")        # Делаем запрос для получения погоды
+        self.logger.info("Agent began to run")        
 
         messageAddr = get_action_arguments(action_node, 1)[0]
 
-        nrel_answer = ScKeynodes.resolve("nrel_answer", None)
+        show_weather_answer_phrase = ScKeynodes.resolve("show_weather_answer_phrase", None)
 
         messageType = ScKeynodes.resolve("concept_message_about_weather", None)
+        # Делаем запрос для получения погоды
         if check_edge(sc_types.EDGE_ACCESS_VAR_POS_PERM, messageType, messageAddr):
-            response = requests.get("https://api.open-meteo.com/v1/forecast?latitude=53.9&longitude=27.57&current_weather=true&hourly=temperature_2m,relativehumidity_2m,windspeed_10m")        # Обрабатываем ответ
-            weather_data = response.json()        # Получаем значение температуры
+            response = requests.get("https://api.open-meteo.com/v1/forecast?latitude=53.9&longitude=27.57&current_weather=true&hourly=temperature_2m,relativehumidity_2m,windspeed_10m")      
+            # Обрабатываем ответ  
+            weather_data = response.json()        
             main_data = weather_data["current_weather"]
-            temperature = main_data["temperature"]      
-            print(temperature)
+            # Получаем значение температуры
+            temperature = main_data["temperature"]       
             
             link = create_link(str(temperature), ScLinkContentType.STRING, link_type = sc_types.LINK_CONST)  
-            edgeDCommon = create_edge(sc_types.EDGE_D_COMMON_CONST, messageAddr, link)
-            tempArc = create_edge(sc_types.EDGE_ACCESS_CONST_POS_PERM, nrel_answer, edgeDCommon)
-
+            tempArc = create_edge(sc_types.EDGE_ACCESS_CONST_POS_PERM, show_weather_answer_phrase, link)
 
             create_action_answer(action_node, link)
 
@@ -73,3 +73,4 @@ with server.connect():
     server.add_modules(module)
     with server.register_modules():
         server.serve()
+        
