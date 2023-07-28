@@ -230,7 +230,7 @@ v = w * (x + z);
 - Cover your code with unit tests.
 - If you don't have enough time to make it right, leave a `// TODO(DeveloperName): need to fix it` comment.
 
-### Some useful macros:
+### Some useful macros
 
 - macroses to check compilation platform
 
@@ -285,14 +285,14 @@ SC_CHECK_LESS(a, b, ()); // equal to SC_CHECK(a < b, ());
 SC_CHECK_LESS_EQ(a, b, ()); // equal to SC_CHECK(a <= b, ());
 ```
 
-- Logging:
+### Logging
   * `SC_LOG_DEBUG(msg)` - print message in Debug builds. Prefix: `[Debug]`
   * `SC_LOG_INFO(msg)`
   * `SC_LOG_WARNING(msg)`
   * `SC_LOG_ERROR(msg)`
   * `SC_LOG_INFO_COLOR(msg, color)` - print colored info message. Look color constants in `ScConsole::Color`
 
-- Declare your own exceptions:
+### Declare your own exceptions
 
 ```cpp
 class MyException final : public ScException
@@ -302,13 +302,14 @@ public:
 };
 ```
 
-- Throw exceptions with `SC_THROW_EXCEPTION(exceptionName, message)`:
+### Throw exceptions
 
+Throw exceptions with `SC_THROW_EXCEPTION(exceptionName, message)`:
 ```cpp
 SC_THROW_EXCEPTION(MyException, "my message")
 ```
 
-- Exception for a non implemented parts of code
+### Exception for a non implemented parts of code
 ```cpp
 SC_NOT_IMPLEMENTED("message")
 ```

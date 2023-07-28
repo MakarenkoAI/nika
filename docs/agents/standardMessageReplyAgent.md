@@ -1,7 +1,8 @@
 Is an agent that generates a reply message based on existing rules in the knowledge base.
 The agent uses phrase generation and direct inference agents.
+
 At first the Standard message reply agent generates the reply message construction.
-Gathers logic rules and a target template, then forwards information to `ostis-inference` agent for further processing.
+Gathers logic rules and a target template, then forwards information to Direct Inference Agent (from scl-machine) for further processing. You can find out more about Direct Inference Agent in the documentation of [scl-machine](../subsystems/scl-machine.md).
 Then it calls the phrase generation agent to generate a sc-link with the reply message text.
 
 **Action class:**

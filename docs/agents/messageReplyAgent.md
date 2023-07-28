@@ -8,7 +8,8 @@ Is an agent that generates the response message, associates with the original re
 **Parameters:**
 
 1. `sound or text file`
-2. `author` of the message.
+
+Also there is the `author` of the message.
 
 **Workflow:**
 
