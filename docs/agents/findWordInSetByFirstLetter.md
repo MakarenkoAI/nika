@@ -7,7 +7,7 @@ The agent can be used as a template to write other agents, for example to cities
 
 **Parameters:**
 
-1. `message node` - an element of `concept_message` and `concept_message_about_find_word_by_first_letter`;
+1. `messageAddr` -- an element of `concept_message` and `concept_message_about_find_word_by_first_letter`.
 
 **Workflow:**
 

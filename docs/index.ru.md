@@ -7,7 +7,7 @@
 - **Разработка**
     * [Git workflow](dev/git-workflow.md)
     * [Pull Request](dev/pr.md) - *правила создания pull requests*
-    * [Codestyle](dev/codestyle.md) - *документация по стилю кодирования*
+    * [Codestyle](dev/codestyle.md) - *документация по стилю написания кода*
     * [Project structure](dev/project_structure.md)
     
 - **Агенты**

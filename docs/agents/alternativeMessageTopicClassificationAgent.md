@@ -6,7 +6,7 @@ This is an agent that performs the message classification using [logic rules](..
 
 **Parameters:**
 
-1. `message node` - an element of `concept_message`;
+1. `messageAddr` -- an element of `concept_message`.
 
 ### Examples
 

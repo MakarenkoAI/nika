@@ -1,4 +1,4 @@
-Данный агент выполняет классификацию сообщений по темам (приветствие, про условия лабораторной работы, про сущность и т.д.).
+Данный агент выполняет классификацию сообщений по теме (приветствие, про условия лабораторной работы, про сущность и т.д.).
 Кроме того, агент классифицирует сообщение по признакам (нейтральная, позитивная, отрицательная эмоциональная окраска) и получает сущности сообщения.
 Агент классифицирует сообщение с помощью Wit.ai.
 
@@ -8,7 +8,7 @@
 
 **Параметры:**
 
-1. `message node` - принадлежит `concept_message`;
+1. `messageAddr` -- элемент класса `concept_message`.
 
 **Используемые библиотеки:**
 
@@ -17,18 +17,18 @@
 **Комментарий:**
 
 * Входное сообщение должно содержать текстовый файл с текстом на русском языке;
-* Исключаемая сущность должна быть формализованна в базе знаний.
+* Выделяемая сущность должна быть формализованна в базе знаний.
 
 ### Пример
 
-Пример вводимой структуры:
+Пример входной структуры:
 
 <img src="../images/messageTopicClassificationAgentInput.png"></img>
 
-Пример выводимой структуры:
+Пример выходной структуры:
 <img src="../images/messageTopicClassificationAgentOutput.png"></img>
 
-Пример структуры, необходимой для классификации сообщения по цели:
+Пример структуры, необходимой для классификации сообщения по теме:
 
 <img src="../images/messageTopicClassificationAgentIntentFormalization.png"></img>
 
@@ -40,17 +40,20 @@
 
 <img src="../images/messageTopicClassificationAgentEntityFormalization.png"></img>
 
-**Классы для messages:**
+**Текущие классифицируемые сообщения:**
 
 1. `concept_greeting_message`
 2. `concept_message_about_entity`
-3. `concept_message_about_lab_work_condition`
-4. `concept_message_about_lab_work_deadline`
+3. `concept_message_about_subdividing`
+4. `concept_message_about_study_system`
+5. `concept_message_about_lab_work_condition`
+6. `concept_message_about_lab_work_condition`
+7. `concept_message_about_lab_work_deadline`
 
 ### Язык реализации агента
 C++
 
-### Итог
+### Результат
 
 Возможные результаты:
 

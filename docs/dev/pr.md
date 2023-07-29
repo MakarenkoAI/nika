@@ -32,6 +32,8 @@ _**All commit, that not applies to this rules, should be split by this rules. An
 
 ### Pull Request Preparation
 
+ If it's needed:
+
  - Read rules to create PR in documentation
  - Update changelog
  - Update documentation
@@ -54,5 +56,5 @@ _**All commit, that not applies to this rules, should be split by this rules. An
 ### After Pull Request Review
 
  - Author can update commits history for remove `Review fixes` commits
- - Author merge PR to base branch
  - Author test work at base branch
+ - Author merge PR to base branch

@@ -1,4 +1,4 @@
-Проект создан на основе [ostis-example-app](http://ostis-ai.github.io/sc-machine/) и использует OSTIS technology.
+Проект создан на основе [ostis-example-app](http://ostis-ai.github.io/sc-machine/) и использует технологию OSTIS.
 
 ## Используемые библиотеки
-Wit.ai - для классификации объектов сообщений и извлечения сообщений.
+Wit.ai - для классификации и выделения сущностей сообщений.

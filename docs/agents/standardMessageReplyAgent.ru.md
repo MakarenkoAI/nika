@@ -1,7 +1,7 @@
 Агент, который создает ответное сообщение на основе существующих правил в базе знаний.
 Агент использует генерацию фраз и агентов прямого вывода.
 
-Сначала Standard message reply agent создает структуру ответного сообщения.
+Сначала StandardMessageReplyAgent создает структуру ответного сообщения.
 Собирает логические правила и целевой шаблон, затем пересылает информацию Direct Inference Agent (агенту из подсистемы scl-machine) для дальнейшей обработки. Вы можете узнать больше про Direct Inference Agent в документации [scl-machine](../subsystems/scl-machine.md). Затем он вызывает phrase generation agent, чтобы создать sc-ссылку с текстом ответного сообщения.
 
 **Класс действий:**
@@ -10,13 +10,13 @@
 
 **Параметры:**
 
-1. `message node` - принадлежит `concept_message` и `concept_atomic_message` или `concept_non_atomic_message`;
+1. `messageAddr` -- элемент класса `concept_message` и `concept_atomic_message` или `concept_non_atomic_message`.
 
 ### Пример
 
 #### 1. Генерация атомарного сообщения
 
-1.1. Пример вводимой структуры:
+1.1. Пример входной структуры:
 
 <img src="../images/standardMessageReplyAgentAtomicInput.png"></img>
 
@@ -28,13 +28,13 @@
 
 <img src="../images/standardMessageReplyAgentAtomicPhrase.png"></img>
 
-1.4. Пример выводимой структуры (атомарное сообщение):
+1.4. Пример выходной структуры (атомарное сообщение):
 
 <img src="../images/standardMessageReplyAgentAtomicMessageOutput.png"></img>
 
 #### 2. Генерация неатомарного сообщения
 
-2.1. Пример вводимой структуры:
+2.1. Пример входной структуры:
 
 <img src="../images/standardMessageReplyAgentNonAtomicInput.png"></img>
 
@@ -46,14 +46,14 @@
 
 <img src="../images/standardMessageReplyAgentNonAtomicPhrase.png"></img>
 
-2.4. Пример выводимой структуры (неатомарное сообщение):
+2.4. Пример выходной структуры (неатомарное сообщение):
 
 <img src="../images/standardMessageReplyAgentNonAtomicMessageOutput.png"></img>
 
-### Итог
+### Результат
 
 Возможные результаты:
  
-* `sc_result_ok` - создано сообщение с ответом.
-* `sc_result_error` - внутренняя ошибка.
-* `sc_result_error_invalid_params` - у действия нет входящего сообщения.
+* `SC_RESULT_OK` - создано сообщение с ответом.
+* `SC_RESULT_ERROR` - внутренняя ошибка.
+* `SC_RESULT_ERROR_invalid_params` - у действия нет входящего сообщения.

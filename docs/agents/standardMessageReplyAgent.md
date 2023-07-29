@@ -11,7 +11,7 @@ Then it calls the phrase generation agent to generate a sc-link with the reply m
 
 **Parameters:**
 
-1. `message node` - an element of `concept_message` and `concept_atomic_message` or `concept_non_atomic_message`;
+1. `messageAddr` -- an element of `concept_message` and `concept_atomic_message` or `concept_non_atomic_message`.
 
 ### Example
 
@@ -55,6 +55,6 @@ Then it calls the phrase generation agent to generate a sc-link with the reply m
 
 Possible result codes:
  
-* `sc_result_ok` - the reply message is generated.
-* `sc_result_error` - internal error.
-* `sc_result_error_invalid_params` - the action has no incoming message.
+* `SC_RESULT_OK` - the reply message is generated.
+* `SC_RESULT_ERROR` - internal error.
+* `SC_RESULT_ERROR_invalid_params` - the action has no incoming message.

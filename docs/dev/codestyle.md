@@ -6,7 +6,7 @@ In general, [Google's coding standard](https://google.github.io/styleguide/cppgu
 
 Below are our specific (but not all!) exceptions to the Google's coding standard:
 
-- All code should conform to C++11 standard.
+- All code should conform to C++17 standard.
 - We use `.cpp` and `.hpp` files, not `.cc` and `.h` (`.c` and `.h` are used for C code), in UTF-8 encoding.
 - File names are lowercase with underscores, like `sc_memory.cpp`.
 - We use `#pragma once` instead of the `#define` Guard in header files.
@@ -30,7 +30,7 @@ Below are our specific (but not all!) exceptions to the Google's coding standard
 ```
 
 - We ARE using C++ exceptions.
-- We are using all features of C++11.
+- We are using all features of C++17.
 
 Naming and formatting
 
